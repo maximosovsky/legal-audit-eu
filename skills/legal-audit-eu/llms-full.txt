@@ -1,0 +1,87 @@
+# legal-audit-eu — LLM Reference
+
+## Overview
+
+legal-audit-eu is a Claude/Hermes-compatible legal-audit skill for EU/EEA/UK-facing websites and web apps. It is not legal advice. It is a legal-engineering workflow for producing a lawyer-reviewable evidence pack: app reality, legal-document claims, GDPR article mapping, ePrivacy/PECR cookie analysis, platform/AI/consumer-law triage, gaps, and separated code/document/legal tasks.
+
+## Core scope
+
+- GDPR and UK GDPR transparency, lawful basis, consent, rights, retention, processors, security, breach, DPIA, DPO, RoPA, representatives, and transfers.
+- ePrivacy/PECR cookie, pixel, analytics, ad-tech, social embed, and session replay consent timing.
+- International transfers: adequacy, SCCs, UK IDTA/Addendum, transfer-impact review.
+- EU/UK ecommerce: trader identity, price transparency, 14-day withdrawal, digital-content exceptions, subscriptions, refunds, unfair practices.
+- Digital Services Act: user content, marketplace, notices, moderation, complaints, ad transparency, recommender transparency.
+- AI Act / automated systems triage: chatbots, profiling, automated decisions, AI vendors, logging, model training.
+- Accessibility and security-disclosure hygiene.
+
+## Important files
+
+| File | Purpose |
+|---|---|
+| SKILL.md | Main audit workflow, checklists, report template, pitfalls, verification. |
+| scripts/scan.py | Standard-library signal scanner with `--jurisdiction eu|uk|all`. |
+| scripts/validate.py | Validates frontmatter and required package files. |
+| references/gdpr-article-map.md | GDPR article-to-audit mapping. |
+| references/eprivacy-cookie-consent.md | Cookie/CMP/ePrivacy checks. |
+| references/uk-gdpr-pecr-note.md | UK GDPR/PECR differences. |
+| references/dsa-ai-act-triage.md | DSA and AI Act triage. |
+| references/ecommerce-consumer-rights.md | EU/UK ecommerce checks. |
+| references/gdpr-eprivacy-checklist.md | Structured GDPR/ePrivacy checklist. |
+| references/templates/privacy-notice-outline.md | EU/UK privacy notice skeleton. |
+| examples/sample-report.md | Example output report shape. |
+| tests/fixtures/sample-site/index.html | Smoke-test fixture site. |
+
+## Quick commands
+
+```bash
+git clone https://github.com/maximosovsky/legal-audit-eu.git
+cd legal-audit-eu
+python scripts/validate.py
+python -m py_compile scripts/scan.py scripts/validate.py
+python scripts/scan.py --jurisdiction eu tests/fixtures/sample-site
+python scripts/scan.py --jurisdiction uk /path/to/project https://example.co.uk
+```
+
+## Scanner options
+
+| Option | Meaning |
+|---|---|
+| `--jurisdiction eu` | EU/EEA GDPR/ePrivacy/consumer/DSA/AI signals. |
+| `--jurisdiction uk` | UK GDPR/PECR/ICO/IDTA layer. |
+| `--jurisdiction all` | Combined EU + UK signal set. |
+| `--samples` | Print short evidence snippets. |
+| `--include-markdown` | Scan Markdown files. |
+| `--include-references` | Include reference/docs files normally excluded from source scans. |
+
+## Audit method
+
+1. Inventory app reality from code and live site.
+2. Extract legal-document claims from privacy notice, cookie policy, terms, DPA/subprocessor disclosures, withdrawal/returns terms, accessibility and platform notices.
+3. Compare reality against documents and user controls.
+4. Map findings to GDPR articles, ePrivacy/PECR, consumer law, DSA, AI Act triage, accessibility, and security areas.
+5. Separate findings into critical, important, owner/legal task, and best-practice categories.
+6. Produce a report with evidence, rule/article basis, required fix, and owner.
+
+## Output standard
+
+Reports should include:
+
+- executive summary;
+- evidence inspected;
+- app reality inventory;
+- legal-document claims;
+- findings table;
+- code fixes;
+- document fixes;
+- owner/legal/operations tasks;
+- residual counsel-review points.
+
+## Safety
+
+Do not expose discovered secrets, tokens, personal data, or sensitive evidence. Redact values and cite only location and type. Do not claim legal compliance; use conditional wording such as “signal,” “gap,” “likely risk,” and “counsel review required.”
+
+## License and author
+
+Maxim Osovsky — https://www.linkedin.com/in/osovsky/
+License: MIT
+Repository: https://github.com/maximosovsky/legal-audit-eu
