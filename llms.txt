@@ -1,0 +1,16 @@
+# legal-audit-eu
+
+> Privacy-lawyer-grade EU/EEA/UK website audit skill for GDPR, ePrivacy/PECR, consumer rights, DSA, AI Act, accessibility, and security signals.
+
+## About
+
+legal-audit-eu is a Claude/Hermes-compatible skill repository for EU/EEA/UK website and web-app legal-engineering audits. It compares app reality against legal documents and guides article-aware review for GDPR, UK GDPR, ePrivacy/PECR, international transfers, processors, RoPA, DPIA, DPO, EU/UK representative, ecommerce consumer rights, DSA/platform duties, AI Act triage, accessibility, and security-disclosure signals.
+
+## Links
+
+- Repository: https://github.com/maximosovsky/legal-audit-eu
+- Main skill: SKILL.md
+- Scanner: scripts/scan.py
+- Full LLM reference: llms-full.txt
+- Author: Maxim Osovsky — https://www.linkedin.com/in/osovsky/
+- License: MIT
