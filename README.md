@@ -14,7 +14,7 @@
 
 </div>
 
-> `legal-audit-eu` turns a website or web-app repository into a lawyer-reviewable evidence pack: app reality, legal-document claims, GDPR article mapping, ePrivacy/cookie timing, platform/AI/consumer-law triage, and separated code/document/legal tasks.
+> Automated scan for informational purposes only, based on open-source skills: [legal-audit-eu](https://github.com/maximosovsky/legal-audit-eu) & [legal-audit-us](https://github.com/maximosovsky/legal-audit-us).
 
 <div align="center">
 
