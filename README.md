@@ -77,6 +77,23 @@ python scripts/scan.py --jurisdiction uk --samples /path/to/project https://exam
 
 </details>
 
+<details>
+<summary>🧩 Hermes Skill Install</summary>
+
+```bash
+# Option A: Install from raw URL
+mkdir -p ~/.hermes/skills/software-development/legal-audit-eu
+curl -fsSL https://raw.githubusercontent.com/maximosovsky/legal-audit-eu/main/SKILL.md \
+  > ~/.hermes/skills/software-development/legal-audit-eu/SKILL.md
+
+# Option B: Clone full repository (includes scanner, references, tests)
+git clone https://github.com/maximosovsky/legal-audit-eu.git ~/.hermes/skills/software-development/legal-audit-eu
+```
+
+After install, start a new Hermes session and load the skill with `skill_view(name='legal-audit-eu')`.
+
+</details>
+
 ---
 
 ## 🏗️ Tech Stack
